@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cardoza.Dev — Hub</title>
-  <meta name="description" content="Hub central de José Enmanuel Cardoza — Ingeniería Computacional, Ciberseguridad, Dev Freelance." />
+  <title>Cardoza.Dev — Portfolio</title>
+  <meta name="description" content="Portfolio de José Enmanuel Cardoza — Ingeniería Computacional, Ciberseguridad, Dev Freelance." />
   <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -495,77 +496,6 @@
       filter: brightness(1.08);
     }
 
-    /* ── Hub nav card ── */
-    .hub-card {
-      background: #0e0e1a;
-      border: 1px solid #1e1e32;
-      border-radius: 6px;
-      padding: 32px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-    }
-    .hub-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--card-accent, var(--green)) 30%, var(--cyan) 70%, transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .hub-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(var(--card-rgb, 0,255,135), 0.04) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
-    .hub-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(var(--card-rgb, 0,255,135), 0.35);
-      box-shadow: 0 0 40px rgba(var(--card-rgb, 0,255,135), 0.12), 0 10px 50px rgba(0,0,0,0.7);
-    }
-    .hub-card:hover::before { opacity: 1; }
-    .hub-card:hover::after  { opacity: 1; }
-
-    /* ── Hub card access link ── */
-    .hub-access {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.74rem;
-      color: var(--card-accent, var(--green));
-      letter-spacing: 0.05em;
-      margin-top: auto;
-      padding-top: 20px;
-      transition: gap 0.2s ease, opacity 0.2s ease;
-      opacity: 0.7;
-    }
-    .hub-card:hover .hub-access {
-      gap: 10px;
-      opacity: 1;
-    }
-
-    /* ── Hub icon box ── */
-    .hub-icon {
-      width: 48px; height: 48px;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,255,135,0.07);
-      border: 1px solid rgba(0,255,135,0.2);
-      flex-shrink: 0;
-      margin-bottom: 20px;
-      transition: box-shadow 0.3s;
-    }
-    .hub-card:hover .hub-icon {
-      box-shadow: 0 0 18px rgba(var(--card-rgb, 0,255,135), 0.25);
-    }
-
     @media (max-width: 640px) {
       .hero-name { font-size: clamp(2.4rem, 13vw, 3.6rem) !important; }
     }
@@ -582,7 +512,7 @@
     <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
 
       <!-- Brand -->
-      <a href="/" class="font-mono font-bold tracking-widest flex items-center gap-1 text-sm">
+      <a href="#hero" class="font-mono font-bold tracking-widest flex items-center gap-1 text-sm">
         <span style="color:#44445a">[</span>
         <span class="neon-green">Cardoza</span>
         <span style="color:#44445a">.</span>
@@ -593,10 +523,11 @@
 
       <!-- Desktop nav + lang switcher -->
       <div class="hidden sm:flex items-center gap-7">
-        <a href="https://about.enmanuel.tech"     class="nav-link" data-i18n="nav_about">sobre_mí</a>
-        <a href="https://portfolio.enmanuel.tech" class="nav-link" data-i18n="nav_portfolio">portfolio</a>
-        <a href="https://hobbies.enmanuel.tech"   class="nav-link" data-i18n="nav_hobbies">hobbies</a>
-        <a href="https://log.enmanuel.tech"        class="nav-link" data-i18n="nav_log">log</a>
+        <a href="#edu"      class="nav-link" data-i18n="nav_edu">educación</a>
+        <a href="#certs"    class="nav-link" data-i18n="nav_certs">certs</a>
+        <a href="#projects" class="nav-link" data-i18n="nav_proj">proyectos</a>
+        <a href="#hobbies"  class="nav-link" data-i18n="nav_hobbies">más_allá</a>
+        <a href="#footer"   class="nav-link" data-i18n="nav_contact">contacto</a>
         <button id="lang-toggle" class="lang-btn" onclick="toggleLang()">EN</button>
       </div>
 
@@ -617,10 +548,11 @@
     <!-- Mobile dropdown -->
     <div id="mobile-menu" class="hidden sm:hidden px-5 pb-5 pt-3 flex flex-col gap-4"
          style="background:rgba(8,8,16,0.98);border-top:1px solid rgba(0,255,240,0.06);">
-      <a href="https://about.enmanuel.tech"     class="nav-link text-sm" data-i18n="nav_about"     onclick="closeMobileMenu()">sobre_mí</a>
-      <a href="https://portfolio.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_portfolio" onclick="closeMobileMenu()">portfolio</a>
-      <a href="https://hobbies.enmanuel.tech"   class="nav-link text-sm" data-i18n="nav_hobbies"   onclick="closeMobileMenu()">hobbies</a>
-      <a href="https://log.enmanuel.tech"        class="nav-link text-sm" data-i18n="nav_log"       onclick="closeMobileMenu()">log</a>
+      <a href="#edu"      class="nav-link text-sm" data-i18n="nav_edu"     onclick="closeMobileMenu()">educación</a>
+      <a href="#certs"    class="nav-link text-sm" data-i18n="nav_certs"   onclick="closeMobileMenu()">certs</a>
+      <a href="#projects" class="nav-link text-sm" data-i18n="nav_proj"    onclick="closeMobileMenu()">proyectos</a>
+      <a href="#hobbies"  class="nav-link text-sm" data-i18n="nav_hobbies" onclick="closeMobileMenu()">más_allá</a>
+      <a href="#footer"   class="nav-link text-sm" data-i18n="nav_contact" onclick="closeMobileMenu()">contacto</a>
     </div>
   </header>
 
@@ -643,7 +575,7 @@
           <span class="tdot bg-red-500"></span>
           <span class="tdot bg-yellow-400"></span>
           <span class="tdot" style="background:#00ff87;box-shadow:0 0 6px #00ff87"></span>
-          <span class="ml-1 font-mono">~/cardoza/hub — zsh</span>
+          <span class="ml-1 font-mono">~/cardoza/portfolio — zsh</span>
           <span class="animate-blink ml-1" style="color:#00ff87">▊</span>
         </div>
 
@@ -684,6 +616,18 @@
           <span style="color:#eeeeff;">seguridad de infraestructuras</span>.</span>
         </p>
 
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="btn-primary">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            <span data-i18n="hero_cta1">Ver proyectos</span>
+          </a>
+          <a href="#footer" class="btn-outline">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="hero_cta2">Contáctame</span>
+          </a>
+        </div>
+
         <!-- Scroll hint -->
         <div class="mt-20 flex items-center gap-3">
           <div class="h-px max-w-xs flex-1" style="background:linear-gradient(90deg,transparent,rgba(0,255,240,0.2))"></div>
@@ -694,136 +638,388 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════ HUB NAVIGATION ══ -->
-    <section id="hub-navigation" class="py-24" style="border-top:1px solid rgba(0,255,240,0.07);">
+    <!-- ════════════════════════════ EDUCACIÓN / EXPERIENCIA ══ -->
+    <section id="edu" class="py-24" style="border-top:1px solid rgba(0,255,240,0.07);">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
 
         <div class="reveal mb-14">
-          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="hub_cmd">ls ./subdominios/</span></p>
+          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="edu_cmd">cat curriculum.json</span></p>
           <h2 class="text-3xl sm:text-4xl font-bold" style="color:#eeeeff;">
-            <span data-i18n="hub_title">Explorar</span>
-            <span class="neon-green"> <span data-i18n="hub_title2">el ecosistema</span></span>
+            <span data-i18n="edu_title">Educación &amp;</span>
+            <span class="neon-cyan"> <span data-i18n="edu_title2">Experiencia</span></span>
           </h2>
-          <p class="mt-3 text-sm max-w-lg" style="color:#7878a0;" data-i18n="hub_sub">Cada subdominio es un módulo independiente. Navega al sistema que necesites.</p>
         </div>
 
-        <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-          <!-- A. Sobre Mí -->
-          <a href="https://about.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#00ff87;--card-rgb:0,255,135;transition-delay:0.05s;">
-            <div class="hub-icon">
-              <svg width="22" height="22" fill="none" stroke="#00ff87" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
+          <!-- EDUCACIÓN -->
+          <div class="reveal" style="transition-delay:0.05s;">
+            <h3 class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#44445a;">
+              <span style="color:#00ff87">▸</span> <span data-i18n="edu_section">Educación</span>
+            </h3>
+            <div class="flex flex-col gap-7">
+
+              <div class="timeline-item">
+                <p class="font-mono text-xs mb-1" style="color:#44445a;">2022 – 2026</p>
+                <h4 class="font-semibold mb-1" style="color:#eeeeff;" data-i18n="edu1_title">Ingeniería Computacional</h4>
+                <p class="text-sm" style="color:#7878a0;">Universidad Valle del Momboy</p>
+                <p class="font-mono text-xs mt-1" style="color:#44445a;" data-i18n="edu1_status">Próximo a titularme · 2026</p>
+              </div>
+
+              <div class="timeline-item">
+                <p class="font-mono text-xs mb-1" style="color:#44445a;">2024 – 2025</p>
+                <h4 class="font-semibold mb-1" style="color:#eeeeff;" data-i18n="edu2_title">Ciberseguridad</h4>
+                <p class="text-sm" style="color:#7878a0;">CEUPE — Centro Europeo de Postgrado</p>
+                <p class="font-mono text-xs mt-1" style="color:#00ff87;" data-i18n="edu2_status">Completado · 2025</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- EXPERIENCIA -->
+          <div class="reveal" style="transition-delay:0.1s;">
+            <h3 class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#44445a;">
+              <span style="color:#00fff0">▸</span> <span data-i18n="exp_section">Experiencia</span>
+            </h3>
+            <div class="flex flex-col gap-7">
+
+              <div class="timeline-item">
+                <p class="font-mono text-xs mb-1" style="color:#44445a;">2026</p>
+                <h4 class="font-semibold mb-1" style="color:#eeeeff;" data-i18n="exp1_title">Pasante de Ingeniería</h4>
+                <p class="text-sm" style="color:#7878a0;">Networx Solutions C.A.</p>
+                <p class="text-xs mt-1 leading-relaxed" style="color:#7878a0;" data-i18n="exp1_desc">Infraestructura de redes, soporte técnico y análisis de sistemas empresariales.</p>
+              </div>
+
+              <div class="timeline-item">
+                <p class="font-mono text-xs mb-1" style="color:#44445a;">2023 – <span data-i18n="present">Presente</span></p>
+                <h4 class="font-semibold mb-1" style="color:#eeeeff;" data-i18n="exp2_title">Desarrollador Web Freelance</h4>
+                <p class="text-sm" style="color:#7878a0;" data-i18n="exp2_desc">Sistemas POS, gestores de inventario, aplicaciones móviles y herramientas a medida para empresas y proyectos académicos.</p>
+              </div>
+
+              <div class="timeline-item">
+                <p class="font-mono text-xs mb-1" style="color:#44445a;">2018 – <span data-i18n="present">Presente</span></p>
+                <h4 class="font-semibold mb-1" style="color:#eeeeff;" data-i18n="exp3_title">Soporte Técnico Informático</h4>
+                <p class="text-sm" style="color:#7878a0;" data-i18n="exp3_desc">Mantenimiento preventivo y correctivo, redes LAN, soporte de hardware y software.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════ CERTIFICACIONES + STACK ══ -->
+    <section id="certs" class="py-24" style="border-top:1px solid rgba(0,255,240,0.07);">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <div class="reveal mb-14">
+          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="certs_cmd">ls ./certifications</span></p>
+          <h2 class="text-3xl sm:text-4xl font-bold" style="color:#eeeeff;">
+            <span data-i18n="certs_title">Certificaciones</span>
+            <span class="neon-green"> &amp; <span data-i18n="stack_title">Stack</span></span>
+          </h2>
+        </div>
+
+        <!-- Certifications grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14 reveal" style="transition-delay:0.05s;">
+
+          <!-- Microsoft Azure -->
+          <div class="cert-badge">
+            <div class="icon-box flex-shrink-0" style="background:rgba(0,120,255,0.08);border-color:rgba(0,120,255,0.2);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0078ff" stroke-width="1.8">
+                <path d="M3 15l4-8 4 4 4-6 4 10H3z"/><path d="M3 19h18"/>
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">about.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_a_title">Sobre Mí</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_a_desc">Perfil técnico completo: formación en Ingeniería Computacional, ciberseguridad y stack detallado.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag">cv.json</span>
-              <span class="tag">stack</span>
+            <div>
+              <p class="font-mono font-semibold text-sm" style="color:#eeeeff;">Microsoft Azure</p>
+              <p class="text-xs mt-0.5" style="color:#7878a0;" data-i18n="cert_az">Fundamentos de nube &amp; servicios</p>
             </div>
-            <div class="hub-access">
-              <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
+          </div>
 
-          <!-- B. Portfolio & Demos — ocupa 2 columnas en lg -->
-          <a href="https://portfolio.enmanuel.tech" class="hub-card reveal lg:col-span-2"
-             style="--card-accent:#00fff0;--card-rgb:0,255,240;transition-delay:0.1s;">
-            <div class="hub-icon" style="background:rgba(0,255,240,0.07);border-color:rgba(0,255,240,0.2);">
-              <svg width="22" height="22" fill="none" stroke="#00fff0" stroke-width="1.8" viewBox="0 0 24 24">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
+          <!-- Power BI -->
+          <div class="cert-badge" style="border-left-color:rgba(255,190,0,0.5);">
+            <div class="icon-box flex-shrink-0" style="background:rgba(255,190,0,0.07);border-color:rgba(255,190,0,0.2);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffbe00" stroke-width="1.8">
+                <rect x="2" y="9" width="4" height="12"/><rect x="9" y="5" width="4" height="16"/><rect x="16" y="2" width="4" height="19"/>
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">portfolio.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_b_title">Portfolio &amp; Demos</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_b_desc">SisvenPOS, gestores de inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag">SisvenPOS</span>
-              <span class="tag">React Native</span>
-              <span class="tag">Python</span>
-              <span class="tag">Supabase</span>
+            <div>
+              <p class="font-mono font-semibold text-sm" style="color:#eeeeff;">Microsoft Power BI</p>
+              <p class="text-xs mt-0.5" style="color:#7878a0;" data-i18n="cert_pbi">Modelado y análisis de datos</p>
             </div>
-            <div class="hub-access" style="color:#00fff0;">
-              <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
+          </div>
 
-          <!-- C. Más allá del código -->
-          <a href="https://hobbies.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#ff00c8;--card-rgb:255,0,200;transition-delay:0.15s;">
-            <div class="hub-icon" style="background:rgba(255,0,200,0.07);border-color:rgba(255,0,200,0.2);">
-              <svg width="22" height="22" fill="none" stroke="#ff00c8" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M9 18V5l12-2v13"/>
-                <circle cx="6" cy="18" r="3"/>
-                <circle cx="18" cy="16" r="3"/>
+          <!-- Cisco Networking -->
+          <div class="cert-badge" style="border-left-color:rgba(0,255,240,0.5);">
+            <div class="icon-box flex-shrink-0" style="background:rgba(0,255,240,0.07);border-color:rgba(0,255,240,0.2);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00fff0" stroke-width="1.8">
+                <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">hobbies.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_c_title">Más allá del código</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_c_desc">Fotografía, riffs de Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag" style="border-color:rgba(255,0,200,0.2);color:#c070a0;">fotografía</span>
-              <span class="tag" style="border-color:rgba(255,0,200,0.2);color:#c070a0;">guitarra</span>
+            <div>
+              <p class="font-mono font-semibold text-sm" style="color:#eeeeff;">Cisco Networking Academy</p>
+              <p class="text-xs mt-0.5" style="color:#7878a0;" data-i18n="cert_cisco">Ciberseguridad y redes</p>
             </div>
-            <div class="hub-access" style="color:#ff00c8;">
-              <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
+          </div>
 
-          <!-- D. Log / Ensayos -->
-          <a href="https://log.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#9d00ff;--card-rgb:157,0,255;transition-delay:0.2s;">
-            <div class="hub-icon" style="background:rgba(157,0,255,0.07);border-color:rgba(157,0,255,0.2);">
-              <svg width="22" height="22" fill="none" stroke="#9d00ff" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
+          <!-- Green Chemistry -->
+          <div class="cert-badge" style="border-left-color:rgba(0,200,80,0.5);">
+            <div class="icon-box flex-shrink-0" style="background:rgba(0,200,80,0.07);border-color:rgba(0,200,80,0.2);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00c850" stroke-width="1.8">
+                <path d="M12 2a10 10 0 0 0 0 20"/><path d="M12 2C6.48 2 2 6.48 2 12"/><path d="M2 12c0 5.52 4.48 10 10 10"/><circle cx="12" cy="12" r="3"/>
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">log.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_d_title">Log / Ensayos</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_d_desc">Artículos técnicos sobre OSINT, análisis forense, Linux y reflexiones del ecosistema dev.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag" style="border-color:rgba(157,0,255,0.2);color:#9070b8;">OSINT</span>
-              <span class="tag" style="border-color:rgba(157,0,255,0.2);color:#9070b8;">Linux</span>
+            <div>
+              <p class="font-mono font-semibold text-sm" style="color:#eeeeff;">Green Chemistry — UNITAR</p>
+              <p class="text-xs mt-0.5" style="color:#7878a0;" data-i18n="cert_gc">Química verde sostenible</p>
             </div>
-            <div class="hub-access" style="color:#9d00ff;">
-              <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
+          </div>
 
-          <!-- E. Laboratorio -->
-          <a href="https://lab.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#ffbe00;--card-rgb:255,190,0;transition-delay:0.25s;">
-            <div class="hub-icon" style="background:rgba(255,190,0,0.07);border-color:rgba(255,190,0,0.2);">
-              <svg width="22" height="22" fill="none" stroke="#ffbe00" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+          <!-- ISO 27001 -->
+          <div class="cert-badge" style="border-left-color:rgba(157,0,255,0.5);">
+            <div class="icon-box flex-shrink-0" style="background:rgba(157,0,255,0.07);border-color:rgba(157,0,255,0.2);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9d00ff" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">lab.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_e_title">Laboratorio</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_e_desc">Scripts, experimentos y herramientas en construcción. Zona de pruebas activa.</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="tag" style="border-color:rgba(255,190,0,0.2);color:#a08030;">scripts</span>
-              <span class="tag" style="border-color:rgba(255,190,0,0.2);color:#a08030;">WIP</span>
+            <div>
+              <p class="font-mono font-semibold text-sm" style="color:#eeeeff;">ISO/IEC 27001</p>
+              <p class="text-xs mt-0.5" style="color:#9d00ff;" data-i18n="cert_iso">Auditor Interno — en proceso</p>
             </div>
-            <div class="hub-access" style="color:#ffbe00;">
-              <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+        </div>
+
+        <!-- Languages spoken -->
+        <div class="reveal mb-14" style="transition-delay:0.1s;">
+          <h3 class="font-mono text-xs uppercase tracking-widest mb-4" style="color:#44445a;">
+            <span style="color:#00ff87">▸</span> <span data-i18n="lang_title">Idiomas</span>
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            <div class="lang-badge">
+              <span style="color:#eeeeff;">Español</span>
+              <span class="ml-2 font-mono text-xs neon-green">Nativo</span>
             </div>
-          </a>
+            <div class="lang-badge">
+              <span style="color:#eeeeff;">English</span>
+              <span class="ml-2 font-mono text-xs neon-cyan">B1</span>
+            </div>
+            <div class="lang-badge">
+              <span style="color:#eeeeff;">Deutsch</span>
+              <span class="ml-2 font-mono text-xs" style="color:#ff00c8;">A1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stack grid -->
+        <div class="reveal" style="transition-delay:0.15s;">
+          <h3 class="font-mono text-xs uppercase tracking-widest mb-6" style="color:#44445a;">
+            <span style="color:#00fff0">▸</span> <span data-i18n="stack_label">Stack Tecnológico</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <div class="stack-card">
+              <h4 class="font-mono text-xs uppercase tracking-widest mb-4" style="color:#44445a;" data-i18n="stack_env">Entorno</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">MX Linux</span>
+                <span class="tag">Terminal</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+
+            <div class="stack-card">
+              <h4 class="font-mono text-xs uppercase tracking-widest mb-4" style="color:#44445a;" data-i18n="stack_front">Frontend</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">TailwindCSS</span>
+                <span class="tag">React Native</span>
+                <span class="tag">HTML5</span>
+              </div>
+            </div>
+
+            <div class="stack-card">
+              <h4 class="font-mono text-xs uppercase tracking-widest mb-4" style="color:#44445a;" data-i18n="stack_back">Backend &amp; DB</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">Supabase</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+
+            <div class="stack-card sm:col-span-2 lg:col-span-3">
+              <h4 class="font-mono text-xs uppercase tracking-widest mb-4" style="color:#44445a;" data-i18n="stack_sec">Seguridad &amp; Análisis</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">Informática Forense</span>
+                <span class="tag">Ciberseguridad</span>
+                <span class="tag">Redes TCP/IP</span>
+                <span class="tag">ISO 27001</span>
+                <span class="tag">OSINT</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ PROYECTOS ══ -->
+    <section id="projects" class="py-24" style="border-top:1px solid rgba(0,255,240,0.07);">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <div class="reveal mb-14">
+          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="proj_cmd">ls ./projects/</span></p>
+          <h2 class="text-3xl sm:text-4xl font-bold" style="color:#eeeeff;">
+            <span data-i18n="proj_title">Proyectos</span>
+            <span class="neon-green"> <span data-i18n="proj_title2">destacados</span></span>
+          </h2>
+          <p class="mt-3 text-sm max-w-lg" style="color:#7878a0;" data-i18n="proj_sub">Soluciones reales construidas para resolver problemas concretos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <!-- SisvenPOS -->
+          <article class="project-card cyber-card reveal" style="transition-delay:0.05s;">
+            <div class="flex items-start justify-between mb-5">
+              <div class="icon-box">
+                <svg width="18" height="18" fill="none" stroke="#00ff87" stroke-width="1.8" viewBox="0 0 24 24">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                </svg>
+              </div>
+              <span class="font-mono text-xs flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full animate-pulse-slow" style="background:#00ff87;box-shadow:0 0 6px #00ff87;"></span>
+                <span class="neon-green">PROD</span>
+              </span>
+            </div>
+            <h3 class="font-mono font-semibold mb-2" style="font-size:1.05rem;color:#eeeeff;">SisvenPOS</h3>
+            <p class="text-sm leading-relaxed mb-5" style="color:#7878a0;">
+              <span data-i18n="p1_desc">Sistema de inventario y ventas con <span style="color:#eeeeff;">módulos de seguridad</span> y licencias antipiratería integradas.</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag" data-i18n="p1_t1">licencias</span><span class="tag">PDF</span>
+            </div>
+          </article>
+
+          <!-- Sistemas Académicos -->
+          <article class="project-card cyber-card reveal" style="transition-delay:0.1s;">
+            <div class="flex items-start justify-between mb-5">
+              <div class="icon-box" style="background:rgba(255,190,0,0.07);border-color:rgba(255,190,0,0.2);">
+                <svg width="18" height="18" fill="none" stroke="#ffbe00" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"/>
+                </svg>
+              </div>
+              <span class="font-mono text-xs" style="color:#ffbe00;">ACAD</span>
+            </div>
+            <h3 class="font-mono font-semibold mb-2" style="font-size:1.05rem;color:#eeeeff;" data-i18n="p2_name">Sistemas Académicos</h3>
+            <p class="text-sm leading-relaxed mb-5" style="color:#7878a0;">
+              <span data-i18n="p2_desc">Gestores de inventario y <span style="color:#eeeeff;">herramientas a medida</span> para proyectos universitarios.</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag" data-i18n="p2_t1">gestión</span><span class="tag">Supabase</span><span class="tag">TailwindCSS</span>
+            </div>
+          </article>
+
+          <!-- Mobile POS -->
+          <article class="project-card cyber-card reveal" style="transition-delay:0.15s;">
+            <div class="flex items-start justify-between mb-5">
+              <div class="icon-box" style="background:rgba(0,255,240,0.07);border-color:rgba(0,255,240,0.2);">
+                <svg width="18" height="18" fill="none" stroke="#00fff0" stroke-width="1.8" viewBox="0 0 24 24">
+                  <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+                </svg>
+              </div>
+              <span class="font-mono text-xs neon-cyan">UI/UX</span>
+            </div>
+            <h3 class="font-mono font-semibold mb-2" style="font-size:1.05rem;color:#eeeeff;">Mobile POS</h3>
+            <p class="text-sm leading-relaxed mb-5" style="color:#7878a0;">
+              <span data-i18n="p3_desc">Prototipo UI de aplicación móvil para <span style="color:#eeeeff;">gestión de restaurantes</span>. Pedidos, mesas y comandas en tiempo real.</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">React Native</span><span class="tag" data-i18n="p3_t1">prototipo</span><span class="tag">Supabase</span>
+            </div>
+          </article>
+
+          <!-- Inventarios Telecom -->
+          <article class="project-card cyber-card reveal" style="transition-delay:0.2s;">
+            <div class="flex items-start justify-between mb-5">
+              <div class="icon-box" style="background:rgba(157,0,255,0.07);border-color:rgba(157,0,255,0.2);">
+                <svg width="18" height="18" fill="none" stroke="#9d00ff" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+                </svg>
+              </div>
+              <span class="font-mono text-xs" style="color:#9d00ff;">CORP</span>
+            </div>
+            <h3 class="font-mono font-semibold mb-2" style="font-size:1.05rem;color:#eeeeff;" data-i18n="p4_name">Inventarios Telecom</h3>
+            <p class="text-sm leading-relaxed mb-5" style="color:#7878a0;">
+              <span data-i18n="p4_desc"><span style="color:#eeeeff;">Digitalización y optimización</span> de datos de inventario para empresas de telecomunicaciones.</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">SQL</span><span class="tag" data-i18n="p4_t1">corporativo</span><span class="tag" data-i18n="p4_t2">digitalización</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════ MÁS ALLÁ DEL CÓDIGO ══ -->
+    <section id="hobbies" class="py-24" style="border-top:1px solid rgba(0,255,240,0.07);">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <div class="reveal mb-14">
+          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="hobby_cmd">cat beyond_the_code.txt</span></p>
+          <h2 class="text-3xl sm:text-4xl font-bold" style="color:#eeeeff;">
+            <span data-i18n="hobby_title">Más allá</span>
+            <span class="neon-mag"> <span data-i18n="hobby_title2">del código</span></span>
+          </h2>
+          <p class="mt-3 text-sm max-w-xl leading-relaxed" style="color:#7878a0;">
+            <span data-i18n="hobby_sub">Cuando no estoy programando o analizando vulnerabilidades, me dedico a la fotografía, a sacar riffs de Indie/Space Rock en mi guitarra acústica y a explorar el mundo de Red Dead Redemption 2.</span>
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal" style="transition-delay:0.05s;">
+
+          <div class="hobby-card">
+            <div class="icon-box mb-4">
+              <svg width="18" height="18" fill="none" stroke="#00ff87" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <h3 class="font-mono font-semibold text-sm mb-2" style="color:#eeeeff;" data-i18n="h1_title">Fotografía</h3>
+            <p class="text-xs leading-relaxed" style="color:#7878a0;" data-i18n="h1_desc">Capturando encuadres que cuentan historias. El ojo detrás del lente, tan analítico como el detrás del código.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="icon-box mb-4" style="background:rgba(255,0,200,0.07);border-color:rgba(255,0,200,0.18);">
+              <svg width="18" height="18" fill="none" stroke="#ff00c8" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h3 class="font-mono font-semibold text-sm mb-2" style="color:#eeeeff;" data-i18n="h2_title">Indie / Space Rock</h3>
+            <p class="text-xs leading-relaxed" style="color:#7878a0;" data-i18n="h2_desc">Riffs acústicos entre el desierto y el cosmos. Cuando el compilador falla, la guitarra responde.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="icon-box mb-4" style="background:rgba(0,255,240,0.07);border-color:rgba(0,255,240,0.18);">
+              <svg width="18" height="18" fill="none" stroke="#00fff0" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="font-mono font-semibold text-sm mb-2" style="color:#eeeeff;" data-i18n="h3_title">Seguridad &amp; CTFs</h3>
+            <p class="text-xs leading-relaxed" style="color:#7878a0;" data-i18n="h3_desc">Análisis de vulnerabilidades como disciplina. Entender cómo algo falla es saber cómo construirlo mejor.</p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="icon-box mb-4" style="background:rgba(157,0,255,0.07);border-color:rgba(157,0,255,0.18);">
+              <svg width="18" height="18" fill="none" stroke="#9d00ff" stroke-width="1.8" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+              </svg>
+            </div>
+            <h3 class="font-mono font-semibold text-sm mb-2" style="color:#eeeeff;" data-i18n="h4_title">Forajido Digital</h3>
+            <p class="text-xs leading-relaxed" style="color:#7878a0;">
+              <span data-i18n="h4_desc">Explorando los llanos de</span>
+              <span class="neon-green font-mono" style="font-size:0.72rem;"> Red Dead Redemption 2</span>.
+            </p>
+          </div>
 
         </div>
       </div>
@@ -884,52 +1080,110 @@
   /* ════════════════════════ i18n dictionary ════════════════════════ */
   const DICT = {
     es: {
-      nav_about: 'sobre_mí', nav_portfolio: 'portfolio',
-      nav_hobbies: 'hobbies', nav_log: 'log',
+      nav_edu: 'educación', nav_certs: 'certs', nav_proj: 'proyectos',
+      nav_hobbies: 'más_allá', nav_contact: 'contacto',
       hero_badge1: 'Ing. Computacional · 2026',
       hero_badge2: 'Ciberseguridad · CEUPE',
       hero_badge3: 'Dev Freelance · 2023–Presente',
       hero_bio: 'Próximo a titularme en Ingeniería Computacional (2026). Especializado en desarrollo web, bases de datos y <span style="color:#eeeeff;">seguridad de infraestructuras</span>.',
-      hub_cmd: 'ls ./subdominios/',
-      hub_title: 'Explorar', hub_title2: 'el ecosistema',
-      hub_sub: 'Cada subdominio es un módulo independiente. Navega al sistema que necesites.',
-      hub_access: 'Acceder al sistema',
-      hub_a_title: 'Sobre Mí',
-      hub_a_desc: 'Perfil técnico completo: formación en Ingeniería Computacional, ciberseguridad y stack detallado.',
-      hub_b_title: 'Portfolio &amp; Demos',
-      hub_b_desc: 'SisvenPOS, gestores de inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.',
-      hub_c_title: 'Más allá del código',
-      hub_c_desc: 'Fotografía, riffs de Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.',
-      hub_d_title: 'Log / Ensayos',
-      hub_d_desc: 'Artículos técnicos sobre OSINT, análisis forense, Linux y reflexiones del ecosistema dev.',
-      hub_e_title: 'Laboratorio',
-      hub_e_desc: 'Scripts, experimentos y herramientas en construcción. Zona de pruebas activa.',
+      hero_cta1: 'Ver proyectos', hero_cta2: 'Contáctame',
+      edu_cmd: 'cat curriculum.json',
+      edu_title: 'Educación &amp;', edu_title2: 'Experiencia',
+      edu_section: 'Educación', exp_section: 'Experiencia',
+      edu1_title: 'Ingeniería Computacional', edu1_status: 'Próximo a titularme · 2026',
+      edu2_title: 'Ciberseguridad', edu2_status: 'Completado · 2025',
+      exp1_title: 'Pasante de Ingeniería',
+      exp1_desc: 'Infraestructura de redes, soporte técnico y análisis de sistemas empresariales.',
+      exp2_title: 'Desarrollador Web Freelance',
+      exp2_desc: 'Sistemas POS, gestores de inventario, aplicaciones móviles y herramientas a medida para empresas y proyectos académicos.',
+      exp3_title: 'Soporte Técnico Informático',
+      exp3_desc: 'Mantenimiento preventivo y correctivo, redes LAN, soporte de hardware y software.',
+      present: 'Presente',
+      certs_cmd: 'ls ./certifications',
+      certs_title: 'Certificaciones', stack_title: 'Stack',
+      cert_az: 'Fundamentos de nube &amp; servicios',
+      cert_pbi: 'Modelado y análisis de datos',
+      cert_cisco: 'Ciberseguridad y redes',
+      cert_gc: 'Química verde sostenible',
+      cert_iso: 'Auditor Interno — en proceso',
+      lang_title: 'Idiomas',
+      stack_label: 'Stack Tecnológico',
+      stack_env: 'Entorno', stack_front: 'Frontend',
+      stack_back: 'Backend &amp; DB', stack_sec: 'Seguridad &amp; Análisis',
+      proj_cmd: 'ls ./projects/', proj_title: 'Proyectos', proj_title2: 'destacados',
+      proj_sub: 'Soluciones reales construidas para resolver problemas concretos.',
+      p1_desc: 'Sistema de inventario y ventas con <span style="color:#eeeeff;">módulos de seguridad</span> y licencias antipiratería integradas.',
+      p1_t1: 'licencias',
+      p2_name: 'Sistemas Académicos',
+      p2_desc: 'Gestores de inventario y <span style="color:#eeeeff;">herramientas a medida</span> para proyectos universitarios.',
+      p2_t1: 'gestión',
+      p3_desc: 'Prototipo UI de aplicación móvil para <span style="color:#eeeeff;">gestión de restaurantes</span>. Pedidos, mesas y comandas en tiempo real.',
+      p3_t1: 'prototipo',
+      p4_name: 'Inventarios Telecom',
+      p4_desc: '<span style="color:#eeeeff;">Digitalización y optimización</span> de datos de inventario para empresas de telecomunicaciones.',
+      p4_t1: 'corporativo', p4_t2: 'digitalización',
+      hobby_cmd: 'cat beyond_the_code.txt',
+      hobby_title: 'Más allá', hobby_title2: 'del código',
+      hobby_sub: 'Cuando no estoy programando o analizando vulnerabilidades, me dedico a la fotografía, a sacar riffs de Indie/Space Rock en mi guitarra acústica y a explorar el mundo de Red Dead Redemption 2.',
+      h1_title: 'Fotografía', h1_desc: 'Capturando encuadres que cuentan historias. El ojo detrás del lente, tan analítico como el detrás del código.',
+      h2_title: 'Indie / Space Rock', h2_desc: 'Riffs acústicos entre el desierto y el cosmos. Cuando el compilador falla, la guitarra responde.',
+      h3_title: 'Seguridad &amp; CTFs', h3_desc: 'Análisis de vulnerabilidades como disciplina. Entender cómo algo falla es saber cómo construirlo mejor.',
+      h4_title: 'Forajido Digital', h4_desc: 'Explorando los llanos de',
       footer_text: '¿Tienes un proyecto en mente o quieres hablar sobre tecnología?<br/>Estoy disponible para colaboraciones, freelance y nuevas oportunidades.',
       footer_sub: '// response time &lt; 24h',
       footer_btn: 'Enviar mensaje',
       footer_avail: 'disponible para proyectos',
     },
     en: {
-      nav_about: 'about', nav_portfolio: 'portfolio',
-      nav_hobbies: 'hobbies', nav_log: 'log',
+      nav_edu: 'education', nav_certs: 'certs', nav_proj: 'projects',
+      nav_hobbies: 'beyond_code', nav_contact: 'contact',
       hero_badge1: 'Comp. Engineering · 2026',
       hero_badge2: 'Cybersecurity · CEUPE',
       hero_badge3: 'Freelance Dev · 2023–Present',
       hero_bio: 'Soon graduating in Computer Engineering (2026). Specialized in web development, databases and <span style="color:#eeeeff;">infrastructure security</span>.',
-      hub_cmd: 'ls ./subdomains/',
-      hub_title: 'Explore', hub_title2: 'the ecosystem',
-      hub_sub: 'Each subdomain is an independent module. Navigate to the system you need.',
-      hub_access: 'Access system',
-      hub_a_title: 'About Me',
-      hub_a_desc: 'Full technical profile: Computer Engineering background, cybersecurity and detailed stack.',
-      hub_b_title: 'Portfolio &amp; Demos',
-      hub_b_desc: 'SisvenPOS, corporate inventory managers, Mobile POS prototype and other real solutions built for clients.',
-      hub_c_title: 'Beyond the code',
-      hub_c_desc: 'Photography, Indie/Space Rock riffs on acoustic guitar, and exploring the plains of Red Dead Redemption 2.',
-      hub_d_title: 'Log / Essays',
-      hub_d_desc: 'Technical articles on OSINT, forensic analysis, Linux and dev ecosystem reflections.',
-      hub_e_title: 'Laboratory',
-      hub_e_desc: 'Scripts, experiments and tools under construction. Active testing zone.',
+      hero_cta1: 'View projects', hero_cta2: 'Contact me',
+      edu_cmd: 'cat curriculum.json',
+      edu_title: 'Education &amp;', edu_title2: 'Experience',
+      edu_section: 'Education', exp_section: 'Experience',
+      edu1_title: 'Computer Engineering', edu1_status: 'Graduating · 2026',
+      edu2_title: 'Cybersecurity', edu2_status: 'Completed · 2025',
+      exp1_title: 'Engineering Intern',
+      exp1_desc: 'Network infrastructure, technical support and enterprise systems analysis.',
+      exp2_title: 'Freelance Web Developer',
+      exp2_desc: 'POS systems, inventory managers, mobile apps and custom tools for businesses and academic projects.',
+      exp3_title: 'IT Technical Support',
+      exp3_desc: 'Preventive and corrective maintenance, LAN networks, hardware and software support.',
+      present: 'Present',
+      certs_cmd: 'ls ./certifications',
+      certs_title: 'Certifications', stack_title: 'Stack',
+      cert_az: 'Cloud fundamentals &amp; services',
+      cert_pbi: 'Data modeling and analysis',
+      cert_cisco: 'Cybersecurity and networking',
+      cert_gc: 'Sustainable green chemistry',
+      cert_iso: 'Internal Auditor — in progress',
+      lang_title: 'Languages',
+      stack_label: 'Tech Stack',
+      stack_env: 'Environment', stack_front: 'Frontend',
+      stack_back: 'Backend &amp; DB', stack_sec: 'Security &amp; Analysis',
+      proj_cmd: 'ls ./projects/', proj_title: 'Featured', proj_title2: 'projects',
+      proj_sub: 'Real solutions built to solve concrete problems.',
+      p1_desc: 'Inventory and sales system with <span style="color:#eeeeff;">security modules</span> and integrated anti-piracy licensing.',
+      p1_t1: 'licensing',
+      p2_name: 'Academic Systems',
+      p2_desc: 'Inventory managers and <span style="color:#eeeeff;">custom tools</span> for university projects.',
+      p2_t1: 'management',
+      p3_desc: 'Mobile UI prototype for <span style="color:#eeeeff;">restaurant management</span>. Orders, tables and tickets in real time.',
+      p3_t1: 'prototype',
+      p4_name: 'Telecom Inventory',
+      p4_desc: '<span style="color:#eeeeff;">Digitization and optimization</span> of inventory data for telecommunications companies.',
+      p4_t1: 'corporate', p4_t2: 'digitization',
+      hobby_cmd: 'cat beyond_the_code.txt',
+      hobby_title: 'Beyond', hobby_title2: 'the code',
+      hobby_sub: 'When I\'m not coding or analyzing vulnerabilities, I\'m into photography, riffing Indie/Space Rock on my acoustic guitar, and exploring the world of Red Dead Redemption 2.',
+      h1_title: 'Photography', h1_desc: 'Capturing frames that tell stories. The eye behind the lens, as analytical as the one behind the code.',
+      h2_title: 'Indie / Space Rock', h2_desc: 'Acoustic riffs between the desert and the cosmos. When the compiler fails, the guitar answers.',
+      h3_title: 'Security &amp; CTFs', h3_desc: 'Vulnerability analysis as a discipline. Understanding how something breaks means knowing how to build it better.',
+      h4_title: 'Digital Outlaw', h4_desc: 'Exploring the plains of',
       footer_text: 'Have a project in mind or want to talk tech?<br/>I\'m open to collaborations, freelance work and new opportunities.',
       footer_sub: '// response time &lt; 24h',
       footer_btn: 'Send a message',
@@ -950,10 +1204,15 @@
       if (d[key] !== undefined) el.innerHTML = d[key];
     });
 
+    /* Update typewriter phrases */
     TW_LINES = lang === 'es' ? TW_ES : TW_EN;
 
+    /* Update lang button labels */
     const label = lang === 'es' ? 'EN' : 'ES';
     document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(b => b.textContent = label);
+
+    /* Update <span data-i18n="present"> inside timeline (rendered inline) */
+    document.querySelectorAll('[data-i18n="present"]').forEach(el => { el.textContent = d['present']; });
   }
 
   function toggleLang() {
@@ -985,6 +1244,18 @@
     });
   }, { threshold: 0.09 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ════════════════════ Active nav ════════════════════ */
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('a.nav-link').forEach(l => {
+          l.style.color = l.getAttribute('href') === `#${e.target.id}` ? '#00ff87' : '';
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('section[id], footer[id]').forEach(s => navObs.observe(s));
 
   /* ════════════════════ Canvas particles ════════════════════ */
   (function () {
@@ -1032,13 +1303,13 @@
     'ingeniero_computacional.init()',
     'ciberseguridad.explore()',
     'dev_freelance --build',
-    'hub.enmanuel.tech --online',
+    'seguridad_infraestructuras.run()',
   ];
   const TW_EN = [
     'computer_engineer.init()',
     'cybersecurity.explore()',
     'freelance_dev --build',
-    'hub.enmanuel.tech --online',
+    'infrastructure_security.run()',
   ];
   let TW_LINES = TW_ES;
 
