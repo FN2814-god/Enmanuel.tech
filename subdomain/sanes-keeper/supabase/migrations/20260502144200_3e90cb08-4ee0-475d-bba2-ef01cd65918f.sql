@@ -1,1 +1,0 @@
-revoke execute on function public.is_san_owner(uuid) from public, anon, authenticated;
