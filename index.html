@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cardoza.Dev — Hub</title>
-  <meta name="description" content="Hub central de José Enmanuel Cardoza — Ingeniería Computacional, Ciberseguridad, Dev Freelance." />
+  <meta name="description"
+    content="Hub central de José Enmanuel Cardoza — Ingeniería Computacional, Ciberseguridad, Dev Freelance." />
   <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -12,9 +14,9 @@
       theme: {
         extend: {
           colors: {
-            cyan:    '#00fff0',
+            cyan: '#00fff0',
             magenta: '#ff00c8',
-            accent:  '#00ff87',
+            accent: '#00ff87',
             'accent-dim': '#00cc6a',
             surface: '#080810',
             's1': '#0e0e18',
@@ -31,22 +33,22 @@
             sans: ['"Inter"', 'system-ui', 'sans-serif'],
           },
           animation: {
-            'blink':      'blink 1.1s step-end infinite',
+            'blink': 'blink 1.1s step-end infinite',
             'pulse-slow': 'pulse 3s ease-in-out infinite',
-            'float':      'float 6s ease-in-out infinite',
-            'scan':       'scan 8s linear infinite',
-            'glitch':     'glitch 4s infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'scan': 'scan 8s linear infinite',
+            'glitch': 'glitch 4s infinite',
           },
           keyframes: {
-            blink:  { '0%,100%': { opacity:'1' }, '50%': { opacity:'0' } },
-            float:  { '0%,100%': { transform:'translateY(0px)' }, '50%': { transform:'translateY(-12px)' } },
-            scan:   { '0%': { transform:'translateY(-100%)' }, '100%': { transform:'translateY(100vh)' } },
+            blink: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0' } },
+            float: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-12px)' } },
+            scan: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
             glitch: {
-              '0%,90%,100%': { clipPath:'inset(0 0 100% 0)', transform:'translate(0)' },
-              '92%': { clipPath:'inset(20% 0 50% 0)', transform:'translate(-3px, 2px)', color:'#ff00c8' },
-              '94%': { clipPath:'inset(60% 0 10% 0)', transform:'translate(3px, -2px)', color:'#00fff0' },
-              '96%': { clipPath:'inset(40% 0 30% 0)', transform:'translate(-2px, 1px)', color:'#00ff87' },
-              '98%': { clipPath:'inset(0 0 70% 0)', transform:'translate(2px, -1px)' },
+              '0%,90%,100%': { clipPath: 'inset(0 0 100% 0)', transform: 'translate(0)' },
+              '92%': { clipPath: 'inset(20% 0 50% 0)', transform: 'translate(-3px, 2px)', color: '#ff00c8' },
+              '94%': { clipPath: 'inset(60% 0 10% 0)', transform: 'translate(3px, -2px)', color: '#00fff0' },
+              '96%': { clipPath: 'inset(40% 0 30% 0)', transform: 'translate(-2px, 1px)', color: '#00ff87' },
+              '98%': { clipPath: 'inset(0 0 70% 0)', transform: 'translate(2px, -1px)' },
             },
           },
         },
@@ -55,19 +57,27 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    :root {
-      --green:   #00ff87;
-      --cyan:    #00fff0;
-      --magenta: #ff00c8;
-      --purple:  #9d00ff;
-      --bg:      #080810;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --green: #00ff87;
+      --cyan: #00fff0;
+      --magenta: #ff00c8;
+      --purple: #9d00ff;
+      --bg: #080810;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background-color: var(--bg);
@@ -77,22 +87,33 @@
     }
 
     /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: #0a0a12; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--green), var(--cyan)); border-radius: 2px; }
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a12;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--green), var(--cyan));
+      border-radius: 2px;
+    }
 
     /* ── Selection ── */
-    ::selection { background: rgba(0,255,240,0.2); color: #fff; }
+    ::selection {
+      background: rgba(0, 255, 240, 0.2);
+      color: #fff;
+    }
 
     /* ── Scanlines overlay ── */
     body::before {
       content: '';
-      position: fixed; inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px, transparent 2px,
-        rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 3px
-      );
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom,
+          transparent 0px, transparent 2px,
+          rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 3px);
       pointer-events: none;
       z-index: 9998;
     }
@@ -100,7 +121,9 @@
     /* ── Moving scan line ── */
     .scan-line {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent 0%, var(--cyan) 40%, var(--green) 60%, transparent 100%);
       opacity: 0.06;
@@ -112,8 +135,8 @@
     /* ── Cyber grid background ── */
     .cyber-grid {
       background-image:
-        linear-gradient(rgba(0,255,240,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,240,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 240, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 240, 0.025) 1px, transparent 1px);
       background-size: 48px 48px;
     }
 
@@ -122,16 +145,21 @@
     .corner::after {
       content: '';
       position: absolute;
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       pointer-events: none;
     }
+
     .corner::before {
-      top: -1px; left: -1px;
+      top: -1px;
+      left: -1px;
       border-top: 2px solid var(--green);
       border-left: 2px solid var(--green);
     }
+
     .corner::after {
-      bottom: -1px; right: -1px;
+      bottom: -1px;
+      right: -1px;
       border-bottom: 2px solid var(--cyan);
       border-right: 2px solid var(--cyan);
     }
@@ -141,44 +169,106 @@
       position: relative;
       display: inline-block;
       color: var(--green);
-      text-shadow: 0 0 30px rgba(0,255,135,0.5), 0 0 60px rgba(0,255,135,0.2);
+      text-shadow: 0 0 30px rgba(0, 255, 135, 0.5), 0 0 60px rgba(0, 255, 135, 0.2);
     }
+
     .glitch::before,
     .glitch::after {
       content: attr(data-text);
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
+
     .glitch::before {
       color: var(--magenta);
       animation: glitch-1 4s infinite;
       clip-path: inset(0 0 100% 0);
     }
+
     .glitch::after {
       color: var(--cyan);
       animation: glitch-2 4s infinite;
       clip-path: inset(0 0 100% 0);
     }
+
     @keyframes glitch-1 {
-      0%,89%,100% { clip-path:inset(0 0 100% 0); transform:translate(0); }
-      90% { clip-path:inset(15% 0 55% 0); transform:translate(-3px, 2px); }
-      92% { clip-path:inset(65% 0 5% 0);  transform:translate(3px, -1px); }
-      94% { clip-path:inset(35% 0 35% 0); transform:translate(-2px, 3px); }
-      96% { clip-path:inset(80% 0 2% 0);  transform:translate(2px, -2px); }
+
+      0%,
+      89%,
+      100% {
+        clip-path: inset(0 0 100% 0);
+        transform: translate(0);
+      }
+
+      90% {
+        clip-path: inset(15% 0 55% 0);
+        transform: translate(-3px, 2px);
+      }
+
+      92% {
+        clip-path: inset(65% 0 5% 0);
+        transform: translate(3px, -1px);
+      }
+
+      94% {
+        clip-path: inset(35% 0 35% 0);
+        transform: translate(-2px, 3px);
+      }
+
+      96% {
+        clip-path: inset(80% 0 2% 0);
+        transform: translate(2px, -2px);
+      }
     }
+
     @keyframes glitch-2 {
-      0%,91%,100% { clip-path:inset(0 0 100% 0); transform:translate(0); }
-      92% { clip-path:inset(50% 0 25% 0); transform:translate(3px, -2px); }
-      94% { clip-path:inset(10% 0 70% 0); transform:translate(-3px, 2px); }
-      96% { clip-path:inset(70% 0 8% 0);  transform:translate(2px, -1px); }
-      98% { clip-path:inset(25% 0 50% 0); transform:translate(-2px, 2px); }
+
+      0%,
+      91%,
+      100% {
+        clip-path: inset(0 0 100% 0);
+        transform: translate(0);
+      }
+
+      92% {
+        clip-path: inset(50% 0 25% 0);
+        transform: translate(3px, -2px);
+      }
+
+      94% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-3px, 2px);
+      }
+
+      96% {
+        clip-path: inset(70% 0 8% 0);
+        transform: translate(2px, -1px);
+      }
+
+      98% {
+        clip-path: inset(25% 0 50% 0);
+        transform: translate(-2px, 2px);
+      }
     }
 
     /* ── Neon text ── */
-    .neon-green { color: var(--green); text-shadow: 0 0 8px rgba(0,255,135,0.6), 0 0 20px rgba(0,255,135,0.3); }
-    .neon-cyan  { color: var(--cyan);  text-shadow: 0 0 8px rgba(0,255,240,0.6), 0 0 20px rgba(0,255,240,0.3); }
-    .neon-mag   { color: var(--magenta); text-shadow: 0 0 8px rgba(255,0,200,0.6); }
+    .neon-green {
+      color: var(--green);
+      text-shadow: 0 0 8px rgba(0, 255, 135, 0.6), 0 0 20px rgba(0, 255, 135, 0.3);
+    }
+
+    .neon-cyan {
+      color: var(--cyan);
+      text-shadow: 0 0 8px rgba(0, 255, 240, 0.6), 0 0 20px rgba(0, 255, 240, 0.3);
+    }
+
+    .neon-mag {
+      color: var(--magenta);
+      text-shadow: 0 0 8px rgba(255, 0, 200, 0.6);
+    }
 
     /* ── Section label ── */
     .section-label {
@@ -197,26 +287,39 @@
       transition: color 0.2s;
       position: relative;
     }
+
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 1px;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
       background: linear-gradient(90deg, var(--green), var(--cyan));
       transition: width 0.25s ease;
     }
-    .nav-link:hover { color: var(--green); }
-    .nav-link:hover::after { width: 100%; }
+
+    .nav-link:hover {
+      color: var(--green);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
     /* ── Buttons ── */
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 11px 28px;
       background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
       color: #000;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem; font-weight: 700;
-      border-radius: 4px; border: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+      border: none;
       cursor: pointer;
       transition: all 0.25s ease;
       text-decoration: none;
@@ -224,56 +327,70 @@
       clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
       position: relative;
     }
+
     .btn-primary:hover {
-      box-shadow: 0 0 28px rgba(0,255,135,0.5), 0 0 60px rgba(0,255,240,0.2);
+      box-shadow: 0 0 28px rgba(0, 255, 135, 0.5), 0 0 60px rgba(0, 255, 240, 0.2);
       transform: translateY(-2px);
       filter: brightness(1.1);
     }
 
     .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 28px;
       background: transparent;
       color: var(--magenta);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem; font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 500;
       border-radius: 4px;
-      border: 1px solid rgba(255,0,200,0.4);
+      border: 1px solid rgba(255, 0, 200, 0.4);
       cursor: pointer;
       transition: all 0.25s ease;
       text-decoration: none;
       letter-spacing: 0.04em;
       clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
     }
+
     .btn-outline:hover {
-      background: rgba(255,0,200,0.08);
+      background: rgba(255, 0, 200, 0.08);
       border-color: var(--magenta);
-      box-shadow: 0 0 20px rgba(255,0,200,0.3);
+      box-shadow: 0 0 20px rgba(255, 0, 200, 0.3);
       color: #ff66e0;
       transform: translateY(-2px);
     }
 
     /* ── Tag badge ── */
     .tag {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 5px 13px;
       border-radius: 3px;
-      background: rgba(0,255,240,0.05);
-      border: 1px solid rgba(0,255,240,0.15);
+      background: rgba(0, 255, 240, 0.05);
+      border: 1px solid rgba(0, 255, 240, 0.15);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem; color: #9090b8;
+      font-size: 0.76rem;
+      color: #9090b8;
       transition: all 0.2s ease;
       cursor: default;
     }
+
     .tag:hover {
-      background: rgba(0,255,135,0.1);
-      border-color: rgba(0,255,135,0.5);
+      background: rgba(0, 255, 135, 0.1);
+      border-color: rgba(0, 255, 135, 0.5);
       color: var(--green);
-      box-shadow: 0 0 10px rgba(0,255,135,0.15);
+      box-shadow: 0 0 10px rgba(0, 255, 135, 0.15);
     }
 
     /* ── Terminal dot ── */
-    .tdot { display: inline-block; border-radius: 50%; width: 10px; height: 10px; }
+    .tdot {
+      display: inline-block;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
 
     /* ── Project card ── */
     .project-card {
@@ -285,29 +402,41 @@
       overflow: hidden;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
+
     .project-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
       background: linear-gradient(90deg, transparent, var(--green) 30%, var(--cyan) 70%, transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
+
     .project-card::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0,255,135,0.03) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(0, 255, 135, 0.03) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
     }
+
     .project-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(0,255,135,0.3);
-      box-shadow: 0 0 30px rgba(0,255,135,0.08), 0 8px 40px rgba(0,0,0,0.6);
+      border-color: rgba(0, 255, 135, 0.3);
+      box-shadow: 0 0 30px rgba(0, 255, 135, 0.08), 0 8px 40px rgba(0, 0, 0, 0.6);
     }
-    .project-card:hover::before { opacity: 1; }
-    .project-card:hover::after  { opacity: 1; }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+    }
 
     /* ── Corner clips on project cards ── */
     .cyber-card {
@@ -328,34 +457,48 @@
       flex-direction: column;
       clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
     }
+
     .hub-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
       background: linear-gradient(90deg, transparent, var(--card-accent, var(--green)) 30%, var(--cyan) 70%, transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
+
     .hub-card::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(var(--card-rgb, 0,255,135), 0.04) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(var(--card-rgb, 0, 255, 135), 0.04) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
     }
+
     .hub-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(var(--card-rgb, 0,255,135), 0.35);
-      box-shadow: 0 0 40px rgba(var(--card-rgb, 0,255,135), 0.12), 0 10px 50px rgba(0,0,0,0.7);
+      border-color: rgba(var(--card-rgb, 0, 255, 135), 0.35);
+      box-shadow: 0 0 40px rgba(var(--card-rgb, 0, 255, 135), 0.12), 0 10px 50px rgba(0, 0, 0, 0.7);
     }
-    .hub-card:hover::before { opacity: 1; }
-    .hub-card:hover::after  { opacity: 1; }
+
+    .hub-card:hover::before {
+      opacity: 1;
+    }
+
+    .hub-card:hover::after {
+      opacity: 1;
+    }
 
     /* ── Hub card access link ── */
     .hub-access {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.74rem;
       color: var(--card-accent, var(--green));
@@ -365,6 +508,7 @@
       transition: gap 0.2s ease, opacity 0.2s ease;
       opacity: 0.7;
     }
+
     .hub-card:hover .hub-access {
       gap: 10px;
       opacity: 1;
@@ -372,26 +516,33 @@
 
     /* ── Hub icon box ── */
     .hub-icon {
-      width: 48px; height: 48px;
+      width: 48px;
+      height: 48px;
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(var(--card-rgb, 0,255,135), 0.07);
-      border: 1px solid rgba(var(--card-rgb, 0,255,135), 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--card-rgb, 0, 255, 135), 0.07);
+      border: 1px solid rgba(var(--card-rgb, 0, 255, 135), 0.2);
       flex-shrink: 0;
       margin-bottom: 20px;
       transition: box-shadow 0.3s;
     }
+
     .hub-card:hover .hub-icon {
-      box-shadow: 0 0 18px rgba(var(--card-rgb, 0,255,135), 0.25);
+      box-shadow: 0 0 18px rgba(var(--card-rgb, 0, 255, 135), 0.25);
     }
 
     /* ── Icon box ── */
     .icon-box {
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,255,135,0.07);
-      border: 1px solid rgba(0,255,135,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 255, 135, 0.07);
+      border: 1px solid rgba(0, 255, 135, 0.18);
       flex-shrink: 0;
     }
 
@@ -401,25 +552,39 @@
       transform: translateY(22px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ── Divider glow ── */
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,255,240,0.15) 30%, rgba(0,255,135,0.15) 70%, transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 240, 0.15) 30%, rgba(0, 255, 135, 0.15) 70%, transparent);
     }
 
     /* ── Hex badge on hero ── */
     .hex-badge {
-      display: inline-flex; align-items: center; gap: 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       padding: 5px 14px 5px 10px;
-      background: rgba(0,255,135,0.06);
-      border: 1px solid rgba(0,255,135,0.2);
+      background: rgba(0, 255, 135, 0.06);
+      border: 1px solid rgba(0, 255, 135, 0.2);
       border-radius: 3px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem; color: #9090b8;
+      font-size: 0.76rem;
+      color: #9090b8;
     }
-    .hex-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+    .hex-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
 
     /* ── Language switcher btn ── */
     .lang-btn {
@@ -429,44 +594,53 @@
       letter-spacing: 0.12em;
       padding: 5px 14px;
       border-radius: 3px;
-      border: 1px solid rgba(0,255,135,0.35);
+      border: 1px solid rgba(0, 255, 135, 0.35);
       background: transparent;
       color: var(--green);
       cursor: pointer;
       transition: all 0.2s ease;
       clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
     }
+
     .lang-btn:hover {
-      background: rgba(0,255,135,0.1);
-      box-shadow: 0 0 14px rgba(0,255,135,0.3);
+      background: rgba(0, 255, 135, 0.1);
+      box-shadow: 0 0 14px rgba(0, 255, 135, 0.3);
     }
 
     /* ── Contact btn ── */
     .btn-contact {
-      display: inline-flex; align-items: center; gap: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 14px 40px;
       background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
       color: #000;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem; font-weight: 700;
+      font-size: 0.85rem;
+      font-weight: 700;
       letter-spacing: 0.06em;
       border-radius: 4px;
-      border: none; cursor: pointer;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
       transition: all 0.25s ease;
       clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     }
+
     .btn-contact:hover {
-      box-shadow: 0 0 36px rgba(0,255,135,0.55), 0 0 80px rgba(0,255,240,0.25);
+      box-shadow: 0 0 36px rgba(0, 255, 135, 0.55), 0 0 80px rgba(0, 255, 240, 0.25);
       transform: translateY(-3px);
       filter: brightness(1.08);
     }
 
     @media (max-width: 640px) {
-      .hero-name { font-size: clamp(2.4rem, 13vw, 3.6rem) !important; }
+      .hero-name {
+        font-size: clamp(2.4rem, 13vw, 3.6rem) !important;
+      }
     }
   </style>
 </head>
+
 <body class="cyber-grid">
 
   <!-- Scanline sweep -->
@@ -474,7 +648,7 @@
 
   <!-- ══════════════════════════════════════════════ HEADER ══ -->
   <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
-          style="background:rgba(8,8,16,0.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,255,240,0.07);">
+    style="background:rgba(8,8,16,0.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,255,240,0.07);">
     <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
 
       <!-- Brand -->
@@ -489,10 +663,10 @@
 
       <!-- Desktop nav + lang switcher -->
       <div class="hidden sm:flex items-center gap-7">
-        <a href="https://about.enmanuel.tech"     class="nav-link" data-i18n="nav_about">sobre_mí</a>
+        <a href="https://about.enmanuel.tech" class="nav-link" data-i18n="nav_about">sobre_mí</a>
         <a href="https://portfolio.enmanuel.tech" class="nav-link" data-i18n="nav_portfolio">portfolio</a>
-        <a href="https://hobbies.enmanuel.tech"   class="nav-link" data-i18n="nav_hobbies">hobbies</a>
-        <a href="https://log.enmanuel.tech"        class="nav-link" data-i18n="nav_log">log</a>
+        <a href="https://hobbies.enmanuel.tech" class="nav-link" data-i18n="nav_hobbies">hobbies</a>
+        <a href="https://logs.enmanuel.tech" class="nav-link" data-i18n="nav_log">log</a>
         <button id="lang-toggle" class="lang-btn" onclick="toggleLang()">EN</button>
       </div>
 
@@ -500,11 +674,16 @@
       <div class="sm:hidden flex items-center gap-3">
         <button class="lang-btn text-xs px-2 py-1" onclick="toggleLang()" id="lang-toggle-m">EN</button>
         <button id="menu-btn" class="p-1" style="color:#7878a0" aria-label="Menú">
-          <svg id="icon-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          <svg id="icon-open" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
-          <svg id="icon-close" class="hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          <svg id="icon-close" class="hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
       </div>
@@ -512,11 +691,15 @@
 
     <!-- Mobile dropdown -->
     <div id="mobile-menu" class="hidden sm:hidden px-5 pb-5 pt-3 flex flex-col gap-4"
-         style="background:rgba(8,8,16,0.98);border-top:1px solid rgba(0,255,240,0.06);">
-      <a href="https://about.enmanuel.tech"     class="nav-link text-sm" data-i18n="nav_about"     onclick="closeMobileMenu()">sobre_mí</a>
-      <a href="https://portfolio.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_portfolio" onclick="closeMobileMenu()">portfolio</a>
-      <a href="https://hobbies.enmanuel.tech"   class="nav-link text-sm" data-i18n="nav_hobbies"   onclick="closeMobileMenu()">hobbies</a>
-      <a href="https://log.enmanuel.tech"        class="nav-link text-sm" data-i18n="nav_log"       onclick="closeMobileMenu()">log</a>
+      style="background:rgba(8,8,16,0.98);border-top:1px solid rgba(0,255,240,0.06);">
+      <a href="https://about.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_about"
+        onclick="closeMobileMenu()">sobre_mí</a>
+      <a href="https://portfolio.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_portfolio"
+        onclick="closeMobileMenu()">portfolio</a>
+      <a href="https://hobbies.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_hobbies"
+        onclick="closeMobileMenu()">hobbies</a>
+      <a href="https://logs.enmanuel.tech" class="nav-link text-sm" data-i18n="nav_log"
+        onclick="closeMobileMenu()">log</a>
     </div>
   </header>
 
@@ -528,14 +711,18 @@
       <canvas id="particles" class="absolute inset-0 pointer-events-none" style="opacity:0.5;"></canvas>
 
       <!-- Glow blobs -->
-      <div class="absolute pointer-events-none" style="top:-8%;left:-4%;width:650px;height:650px;background:radial-gradient(circle,rgba(0,255,135,0.05) 0%,transparent 65%);filter:blur(70px);"></div>
-      <div class="absolute pointer-events-none" style="bottom:-10%;right:-4%;width:550px;height:550px;background:radial-gradient(circle,rgba(255,0,200,0.05) 0%,transparent 65%);filter:blur(70px);"></div>
+      <div class="absolute pointer-events-none"
+        style="top:-8%;left:-4%;width:650px;height:650px;background:radial-gradient(circle,rgba(0,255,135,0.05) 0%,transparent 65%);filter:blur(70px);">
+      </div>
+      <div class="absolute pointer-events-none"
+        style="bottom:-10%;right:-4%;width:550px;height:550px;background:radial-gradient(circle,rgba(255,0,200,0.05) 0%,transparent 65%);filter:blur(70px);">
+      </div>
 
       <div class="max-w-6xl mx-auto px-5 sm:px-8 py-28 w-full relative z-10">
 
         <!-- Terminal pill -->
         <div class="inline-flex items-center gap-2 mb-10 px-4 py-2 font-mono text-xs"
-             style="background:rgba(0,255,135,0.05);border:1px solid rgba(0,255,135,0.18);border-radius:3px;color:#44445a;">
+          style="background:rgba(0,255,135,0.05);border:1px solid rgba(0,255,135,0.18);border-radius:3px;color:#44445a;">
           <span class="tdot bg-red-500"></span>
           <span class="tdot bg-yellow-400"></span>
           <span class="tdot" style="background:#00ff87;box-shadow:0 0 6px #00ff87"></span>
@@ -548,7 +735,7 @@
 
         <!-- Name with glitch -->
         <h1 class="hero-name font-mono font-bold leading-none mb-3"
-            style="font-size:clamp(3rem,8vw,6rem);letter-spacing:-0.02em;">
+          style="font-size:clamp(3rem,8vw,6rem);letter-spacing:-0.02em;">
           <span style="color:#eeeeff;">José </span><span class="glitch" data-text="Cardoza">Cardoza</span>
         </h1>
 
@@ -576,15 +763,20 @@
 
         <!-- Bio -->
         <p class="max-w-xl leading-relaxed mb-10" style="color:#7878a0;font-size:0.95rem;">
-          <span data-i18n="hero_bio">Próximo a titularme en Ingeniería Computacional (2026). Especializado en desarrollo web, bases de datos y
-          <span style="color:#eeeeff;">seguridad de infraestructuras</span>.</span>
+          <span data-i18n="hero_bio">Próximo a titularme en Ingeniería Computacional (2026). Especializado en desarrollo
+            web, bases de datos y
+            <span style="color:#eeeeff;">seguridad de infraestructuras</span>.</span>
         </p>
 
         <!-- Scroll hint -->
         <div class="flex items-center gap-3">
-          <div class="h-px max-w-xs flex-1" style="background:linear-gradient(90deg,transparent,rgba(0,255,240,0.2))"></div>
+          <div class="h-px max-w-xs flex-1" style="background:linear-gradient(90deg,transparent,rgba(0,255,240,0.2))">
+          </div>
           <span class="font-mono text-xs" style="color:#44445a" data-i18n="scroll_hint">scroll</span>
-          <svg class="animate-bounce" width="13" height="13" fill="none" stroke="#00ff87" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          <svg class="animate-bounce" width="13" height="13" fill="none" stroke="#00ff87" stroke-width="2.5"
+            viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
         </div>
 
       </div>
@@ -595,12 +787,14 @@
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
 
         <div class="reveal mb-14">
-          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="hub_cmd">ls ./subdominios/</span></p>
+          <p class="section-label mb-3"><span style="color:#44445a">$</span> <span data-i18n="hub_cmd">ls
+              ./subdominios/</span></p>
           <h2 class="text-3xl sm:text-4xl font-bold" style="color:#eeeeff;">
             <span data-i18n="hub_title">Explorar</span>
             <span class="neon-green"> <span data-i18n="hub_title2">el ecosistema</span></span>
           </h2>
-          <p class="mt-3 text-sm max-w-lg" style="color:#7878a0;" data-i18n="hub_sub">Cada subdominio es un módulo independiente. Navega al sistema que necesites.</p>
+          <p class="mt-3 text-sm max-w-lg" style="color:#7878a0;" data-i18n="hub_sub">Cada subdominio es un módulo
+            independiente. Navega al sistema que necesites.</p>
         </div>
 
         <!-- Bento Grid -->
@@ -608,38 +802,43 @@
 
           <!-- A. Sobre Mí -->
           <a href="https://about.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#00ff87;--card-rgb:0,255,135;transition-delay:0.05s;">
+            style="--card-accent:#00ff87;--card-rgb:0,255,135;transition-delay:0.05s;">
             <div class="hub-icon">
               <svg width="22" height="22" fill="none" stroke="#00ff87" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
               </svg>
             </div>
             <p class="font-mono text-xs mb-2" style="color:#44445a;">about.enmanuel.tech</p>
             <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_a_title">Sobre Mí</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_a_desc">Perfil técnico completo: formación en Ingeniería Computacional, ciberseguridad y stack detallado.</p>
+            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_a_desc">Perfil técnico completo:
+              formación en Ingeniería Computacional, ciberseguridad y stack detallado.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="tag">cv.json</span>
               <span class="tag">stack</span>
             </div>
             <div class="hub-access">
               <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </div>
           </a>
 
           <!-- B. Portfolio & Demos — ocupa 2 columnas en lg -->
           <a href="https://portfolio.enmanuel.tech" class="hub-card reveal lg:col-span-2"
-             style="--card-accent:#00fff0;--card-rgb:0,255,240;transition-delay:0.1s;">
+            style="--card-accent:#00fff0;--card-rgb:0,255,240;transition-delay:0.1s;">
             <div class="hub-icon" style="background:rgba(0,255,240,0.07);border-color:rgba(0,255,240,0.2);">
               <svg width="22" height="22" fill="none" stroke="#00fff0" stroke-width="1.8" viewBox="0 0 24 24">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
               </svg>
             </div>
             <p class="font-mono text-xs mb-2" style="color:#44445a;">portfolio.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_b_title">Portfolio & Demos</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_b_desc">SisvenPOS, gestores de inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.</p>
+            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_b_title">Portfolio &
+              Demos</h3>
+            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_b_desc">SisvenPOS, gestores de
+              inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="tag">SisvenPOS</span>
               <span class="tag">React Native</span>
@@ -648,76 +847,90 @@
             </div>
             <div class="hub-access" style="color:#00fff0;">
               <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </div>
           </a>
 
           <!-- C. Más allá del código -->
           <a href="https://hobbies.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#ff00c8;--card-rgb:255,0,200;transition-delay:0.15s;">
+            style="--card-accent:#ff00c8;--card-rgb:255,0,200;transition-delay:0.15s;">
             <div class="hub-icon" style="background:rgba(255,0,200,0.07);border-color:rgba(255,0,200,0.2);">
               <svg width="22" height="22" fill="none" stroke="#ff00c8" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M9 18V5l12-2v13"/>
-                <circle cx="6" cy="18" r="3"/>
-                <circle cx="18" cy="16" r="3"/>
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
               </svg>
             </div>
             <p class="font-mono text-xs mb-2" style="color:#44445a;">hobbies.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_c_title">Más allá del código</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_c_desc">Fotografía, riffs de Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.</p>
+            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_c_title">Más allá del
+              código</h3>
+            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_c_desc">Fotografía, riffs de
+              Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="tag" style="border-color:rgba(255,0,200,0.2);color:#c070a0;">fotografía</span>
               <span class="tag" style="border-color:rgba(255,0,200,0.2);color:#c070a0;">guitarra</span>
             </div>
             <div class="hub-access" style="color:#ff00c8;">
               <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </div>
           </a>
 
           <!-- D. Log / Ensayos -->
-          <a href="https://log.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#9d00ff;--card-rgb:157,0,255;transition-delay:0.2s;">
+          <a href="https://logs.enmanuel.tech" class="hub-card reveal"
+            style="--card-accent:#9d00ff;--card-rgb:157,0,255;transition-delay:0.2s;">
             <div class="hub-icon" style="background:rgba(157,0,255,0.07);border-color:rgba(157,0,255,0.2);">
               <svg width="22" height="22" fill="none" stroke="#9d00ff" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
               </svg>
             </div>
-            <p class="font-mono text-xs mb-2" style="color:#44445a;">log.enmanuel.tech</p>
-            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_d_title">Log / Ensayos</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_d_desc">Artículos técnicos sobre OSINT, análisis forense, Linux y reflexiones del ecosistema dev.</p>
+            <p class="font-mono text-xs mb-2" style="color:#44445a;">logs.enmanuel.tech</p>
+            <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_d_title">Log / Ensayos
+            </h3>
+            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_d_desc">Artículos técnicos sobre
+              OSINT, análisis forense, Linux y reflexiones del ecosistema dev.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="tag" style="border-color:rgba(157,0,255,0.2);color:#9070b8;">OSINT</span>
               <span class="tag" style="border-color:rgba(157,0,255,0.2);color:#9070b8;">Linux</span>
             </div>
             <div class="hub-access" style="color:#9d00ff;">
               <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </div>
           </a>
 
           <!-- E. Laboratorio -->
           <a href="https://lab.enmanuel.tech" class="hub-card reveal"
-             style="--card-accent:#ffbe00;--card-rgb:255,190,0;transition-delay:0.25s;">
+            style="--card-accent:#ffbe00;--card-rgb:255,190,0;transition-delay:0.25s;">
             <div class="hub-icon" style="background:rgba(255,190,0,0.07);border-color:rgba(255,190,0,0.2);">
               <svg width="22" height="22" fill="none" stroke="#ffbe00" stroke-width="1.8" viewBox="0 0 24 24">
-                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+                <path
+                  d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
               </svg>
             </div>
             <p class="font-mono text-xs mb-2" style="color:#44445a;">lab.enmanuel.tech</p>
             <h3 class="font-mono font-bold text-lg mb-3" style="color:#eeeeff;" data-i18n="hub_e_title">Laboratorio</h3>
-            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_e_desc">Scripts, experimentos y herramientas en construcción. Zona de pruebas activa.</p>
+            <p class="text-sm leading-relaxed" style="color:#7878a0;" data-i18n="hub_e_desc">Scripts, experimentos y
+              herramientas en construcción. Zona de pruebas activa.</p>
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="tag" style="border-color:rgba(255,190,0,0.2);color:#a08030;">scripts</span>
               <span class="tag" style="border-color:rgba(255,190,0,0.2);color:#a08030;">WIP</span>
             </div>
             <div class="hub-access" style="color:#ffbe00;">
               <span data-i18n="hub_access">Acceder al sistema</span>
-              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </div>
           </a>
 
@@ -744,7 +957,7 @@
 
       <!-- Goodbye text -->
       <p class="mb-3 leading-relaxed" style="color:#7878a0; font-size:0.9rem;" data-i18n="footer_text">
-        ¿Tienes un proyecto en mente o quieres hablar sobre tecnología?<br/>
+        ¿Tienes un proyecto en mente o quieres hablar sobre tecnología?<br />
         Estoy disponible para colaboraciones, freelance y nuevas oportunidades.
       </p>
       <p class="font-mono text-xs mb-10" style="color:#44445a;" data-i18n="footer_sub">
@@ -754,8 +967,8 @@
       <!-- Single contact CTA -->
       <a href="mailto:contact@enmanuel.tech" class="btn-contact">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
         </svg>
         <span data-i18n="footer_btn">Enviar mensaje</span>
       </a>
@@ -763,10 +976,12 @@
       <div class="divider mt-12 mb-6"></div>
 
       <!-- Bottom bar -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono" style="color:#44445a;">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono"
+        style="color:#44445a;">
         <span>© 2026 José Enmanuel Cardoza</span>
         <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full animate-pulse-slow" style="background:#00ff87;box-shadow:0 0 6px #00ff87;"></span>
+          <span class="w-1.5 h-1.5 rounded-full animate-pulse-slow"
+            style="background:#00ff87;box-shadow:0 0 6px #00ff87;"></span>
           <span data-i18n="footer_avail">disponible para proyectos</span>
         </div>
       </div>
@@ -777,182 +992,187 @@
   <!-- ═══════════════════════════════════════════════ SCRIPTS ══ -->
   <script>
 
-  /* ════════════════════════ i18n dictionary ════════════════════════ */
-  const DICT = {
-    es: {
-      nav_about: 'sobre_mí', nav_portfolio: 'portfolio',
-      nav_hobbies: 'hobbies', nav_log: 'log',
-      hero_badge1: 'Ing. Computacional · 2026',
-      hero_badge2: 'Ciberseguridad · CEUPE',
-      hero_badge3: 'Dev Freelance · 2023–Presente',
-      hero_bio: 'Próximo a titularme en Ingeniería Computacional (2026). Especializado en desarrollo web, bases de datos y <span style="color:#eeeeff;">seguridad de infraestructuras</span>.',
-      scroll_hint: 'scroll',
-      hub_cmd: 'ls ./subdominios/',
-      hub_title: 'Explorar', hub_title2: 'el ecosistema',
-      hub_sub: 'Cada subdominio es un módulo independiente. Navega al sistema que necesites.',
-      hub_access: 'Acceder al sistema',
-      hub_a_title: 'Sobre Mí',
-      hub_a_desc: 'Perfil técnico completo: formación en Ingeniería Computacional, ciberseguridad y stack detallado.',
-      hub_b_title: 'Portfolio & Demos',
-      hub_b_desc: 'SisvenPOS, gestores de inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.',
-      hub_c_title: 'Más allá del código',
-      hub_c_desc: 'Fotografía, riffs de Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.',
-      hub_d_title: 'Log / Ensayos',
-      hub_d_desc: 'Artículos técnicos sobre OSINT, análisis forense, Linux y reflexiones del ecosistema dev.',
-      hub_e_title: 'Laboratorio',
-      hub_e_desc: 'Scripts, experimentos y herramientas en construcción. Zona de pruebas activa.',
-      footer_text: '¿Tienes un proyecto en mente o quieres hablar sobre tecnología?<br/>Estoy disponible para colaboraciones, freelance y nuevas oportunidades.',
-      footer_sub: '// response time &​lt; 24h',
-      footer_btn: 'Enviar mensaje',
-      footer_avail: 'disponible para proyectos',
-    },
-    en: {
-      nav_about: 'about', nav_portfolio: 'portfolio',
-      nav_hobbies: 'hobbies', nav_log: 'log',
-      hero_badge1: 'Comp. Engineering · 2026',
-      hero_badge2: 'Cybersecurity · CEUPE',
-      hero_badge3: 'Freelance Dev · 2023–Present',
-      hero_bio: 'Soon graduating in Computer Engineering (2026). Specialized in web development, databases and <span style="color:#eeeeff;">infrastructure security</span>.',
-      scroll_hint: 'scroll',
-      hub_cmd: 'ls ./subdomains/',
-      hub_title: 'Explore', hub_title2: 'the ecosystem',
-      hub_sub: 'Each subdomain is an independent module. Navigate to the system you need.',
-      hub_access: 'Access system',
-      hub_a_title: 'About Me',
-      hub_a_desc: 'Full technical profile: Computer Engineering background, cybersecurity and detailed stack.',
-      hub_b_title: 'Portfolio & Demos',
-      hub_b_desc: 'SisvenPOS, corporate inventory managers, Mobile POS prototype and other real solutions built for clients.',
-      hub_c_title: 'Beyond the code',
-      hub_c_desc: 'Photography, Indie/Space Rock riffs on acoustic guitar, and exploring the plains of Red Dead Redemption 2.',
-      hub_d_title: 'Log / Essays',
-      hub_d_desc: 'Technical articles on OSINT, forensic analysis, Linux and dev ecosystem reflections.',
-      hub_e_title: 'Laboratory',
-      hub_e_desc: 'Scripts, experiments and tools under construction. Active testing zone.',
-      footer_text: 'Have a project in mind or want to talk tech?<br/>I\'m open to collaborations, freelance work and new opportunities.',
-      footer_sub: '// response time &​lt; 24h',
-      footer_btn: 'Send a message',
-      footer_avail: 'available for projects',
-    }
-  };
-
-  /* ════════════════════════ i18n engine ════════════════════════ */
-  let currentLang = 'es';
-
-  function applyLang(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    const d = DICT[lang];
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      if (d[key] !== undefined) el.innerHTML = d[key];
-    });
-
-    TW_LINES = lang === 'es' ? TW_ES : TW_EN;
-
-    const label = lang === 'es' ? 'EN' : 'ES';
-    document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(b => b.textContent = label);
-  }
-
-  function toggleLang() {
-    applyLang(currentLang === 'es' ? 'en' : 'es');
-  }
-
-  /* ════════════════════ Mobile menu ════════════════════ */
-  const menuBtn    = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconOpen   = document.getElementById('icon-open');
-  const iconClose  = document.getElementById('icon-close');
-
-  menuBtn.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden', isOpen);
-    iconOpen.classList.toggle('hidden', !isOpen);
-    iconClose.classList.toggle('hidden', isOpen);
-  });
-  function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-  }
-
-  /* ════════════════════ Scroll reveal ════════════════════ */
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.09 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  /* ════════════════════ Canvas particles ════════════════════ */
-  (function () {
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    const COLORS = ['#00ff87','#00fff0','#ff00c8','#9d00ff'];
-    const N = 65;
-    let W, H, pts = [];
-
-    function resize() {
-      const hero = document.getElementById('hero');
-      W = canvas.width  = hero.offsetWidth;
-      H = canvas.height = hero.offsetHeight;
-    }
-    function mkPt() {
-      return { x: Math.random()*W, y: Math.random()*H,
-               vx: (Math.random()-.5)*.3, vy: (Math.random()-.5)*.3,
-               r: Math.random()*1.3+.4, c: COLORS[Math.random()*COLORS.length|0],
-               a: Math.random()*.5+.15 };
-    }
-    function frame() {
-      ctx.clearRect(0,0,W,H);
-      for (let i=0;i<N;i++) {
-        const p=pts[i];
-        p.x+=p.vx; p.y+=p.vy;
-        if(p.x<0)p.x=W; if(p.x>W)p.x=0;
-        if(p.y<0)p.y=H; if(p.y>H)p.y=0;
-        for (let j=i+1;j<N;j++) {
-          const q=pts[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
-          if(d<110){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
-            ctx.strokeStyle=p.c; ctx.globalAlpha=(1-d/110)*.1; ctx.lineWidth=.5; ctx.stroke(); }
-        }
-        ctx.globalAlpha=p.a; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle=p.c; ctx.shadowBlur=5; ctx.shadowColor=p.c; ctx.fill(); ctx.shadowBlur=0;
+    /* ════════════════════════ i18n dictionary ════════════════════════ */
+    const DICT = {
+      es: {
+        nav_about: 'sobre_mí', nav_portfolio: 'portfolio',
+        nav_hobbies: 'hobbies', nav_log: 'log',
+        hero_badge1: 'Ing. Computacional · 2026',
+        hero_badge2: 'Ciberseguridad · CEUPE',
+        hero_badge3: 'Dev Freelance · 2023–Presente',
+        hero_bio: 'Próximo a titularme en Ingeniería Computacional (2026). Especializado en desarrollo web, bases de datos y <span style="color:#eeeeff;">seguridad de infraestructuras</span>.',
+        scroll_hint: 'scroll',
+        hub_cmd: 'ls ./subdominios/',
+        hub_title: 'Explorar', hub_title2: 'el ecosistema',
+        hub_sub: 'Cada subdominio es un módulo independiente. Navega al sistema que necesites.',
+        hub_access: 'Acceder al sistema',
+        hub_a_title: 'Sobre Mí',
+        hub_a_desc: 'Perfil técnico completo: formación en Ingeniería Computacional, ciberseguridad y stack detallado.',
+        hub_b_title: 'Portfolio & Demos',
+        hub_b_desc: 'SisvenPOS, gestores de inventario corporativos, prototipo Mobile POS y otras soluciones reales construidas para clientes.',
+        hub_c_title: 'Más allá del código',
+        hub_c_desc: 'Fotografía, riffs de Indie/Space Rock en acústica y explorando los llanos de Red Dead Redemption 2.',
+        hub_d_title: 'Log / Ensayos',
+        hub_d_desc: 'Artículos técnicos sobre OSINT, análisis forense, Linux y reflexiones del ecosistema dev.',
+        hub_e_title: 'Laboratorio',
+        hub_e_desc: 'Scripts, experimentos y herramientas en construcción. Zona de pruebas activa.',
+        footer_text: '¿Tienes un proyecto en mente o quieres hablar sobre tecnología?<br/>Estoy disponible para colaboraciones, freelance y nuevas oportunidades.',
+        footer_sub: '// response time &​lt; 24h',
+        footer_btn: 'Enviar mensaje',
+        footer_avail: 'disponible para proyectos',
+      },
+      en: {
+        nav_about: 'about', nav_portfolio: 'portfolio',
+        nav_hobbies: 'hobbies', nav_log: 'log',
+        hero_badge1: 'Comp. Engineering · 2026',
+        hero_badge2: 'Cybersecurity · CEUPE',
+        hero_badge3: 'Freelance Dev · 2023–Present',
+        hero_bio: 'Soon graduating in Computer Engineering (2026). Specialized in web development, databases and <span style="color:#eeeeff;">infrastructure security</span>.',
+        scroll_hint: 'scroll',
+        hub_cmd: 'ls ./subdomains/',
+        hub_title: 'Explore', hub_title2: 'the ecosystem',
+        hub_sub: 'Each subdomain is an independent module. Navigate to the system you need.',
+        hub_access: 'Access system',
+        hub_a_title: 'About Me',
+        hub_a_desc: 'Full technical profile: Computer Engineering background, cybersecurity and detailed stack.',
+        hub_b_title: 'Portfolio & Demos',
+        hub_b_desc: 'SisvenPOS, corporate inventory managers, Mobile POS prototype and other real solutions built for clients.',
+        hub_c_title: 'Beyond the code',
+        hub_c_desc: 'Photography, Indie/Space Rock riffs on acoustic guitar, and exploring the plains of Red Dead Redemption 2.',
+        hub_d_title: 'Log / Essays',
+        hub_d_desc: 'Technical articles on OSINT, forensic analysis, Linux and dev ecosystem reflections.',
+        hub_e_title: 'Laboratory',
+        hub_e_desc: 'Scripts, experiments and tools under construction. Active testing zone.',
+        footer_text: 'Have a project in mind or want to talk tech?<br/>I\'m open to collaborations, freelance work and new opportunities.',
+        footer_sub: '// response time &​lt; 24h',
+        footer_btn: 'Send a message',
+        footer_avail: 'available for projects',
       }
-      ctx.globalAlpha=1;
-      requestAnimationFrame(frame);
-    }
-    window.addEventListener('resize', resize);
-    resize(); pts = Array.from({length:N}, mkPt); frame();
-  })();
+    };
 
-  /* ════════════════════ Typewriter ════════════════════ */
-  const TW_ES = [
-    'ingeniero_computacional.init()',
-    'ciberseguridad.explore()',
-    'dev_freelance --build',
-    'hub.enmanuel.tech --online',
-  ];
-  const TW_EN = [
-    'computer_engineer.init()',
-    'cybersecurity.explore()',
-    'freelance_dev --build',
-    'hub.enmanuel.tech --online',
-  ];
-  let TW_LINES = TW_ES;
+    /* ════════════════════════ i18n engine ════════════════════════ */
+    let currentLang = 'es';
 
-  (function () {
-    const el = document.getElementById('typewriter');
-    let li=0, ci=0, del=false;
-    const CUR = '<span style="color:#00ff87;animation:blink 1.1s step-end infinite">|</span>';
-    function tick() {
-      const line = TW_LINES[li % TW_LINES.length];
-      if (!del) { ci++; el.innerHTML=line.slice(0,ci)+CUR; if(ci===line.length){del=true;setTimeout(tick,1900);return;} }
-      else       { ci--; el.innerHTML=line.slice(0,ci)+CUR; if(ci===0){del=false;li++;setTimeout(tick,380);return;} }
-      setTimeout(tick, del?38:72);
+    function applyLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      const d = DICT[lang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (d[key] !== undefined) el.innerHTML = d[key];
+      });
+
+      TW_LINES = lang === 'es' ? TW_ES : TW_EN;
+
+      const label = lang === 'es' ? 'EN' : 'ES';
+      document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(b => b.textContent = label);
     }
-    setTimeout(tick, 700);
-  })();
+
+    function toggleLang() {
+      applyLang(currentLang === 'es' ? 'en' : 'es');
+    }
+
+    /* ════════════════════ Mobile menu ════════════════════ */
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+
+    /* ════════════════════ Scroll reveal ════════════════════ */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.09 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ════════════════════ Canvas particles ════════════════════ */
+    (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      const COLORS = ['#00ff87', '#00fff0', '#ff00c8', '#9d00ff'];
+      const N = 65;
+      let W, H, pts = [];
+
+      function resize() {
+        const hero = document.getElementById('hero');
+        W = canvas.width = hero.offsetWidth;
+        H = canvas.height = hero.offsetHeight;
+      }
+      function mkPt() {
+        return {
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
+          r: Math.random() * 1.3 + .4, c: COLORS[Math.random() * COLORS.length | 0],
+          a: Math.random() * .5 + .15
+        };
+      }
+      function frame() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < N; i++) {
+          const p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          for (let j = i + 1; j < N; j++) {
+            const q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 110) {
+              ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = p.c; ctx.globalAlpha = (1 - d / 110) * .1; ctx.lineWidth = .5; ctx.stroke();
+            }
+          }
+          ctx.globalAlpha = p.a; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.c; ctx.shadowBlur = 5; ctx.shadowColor = p.c; ctx.fill(); ctx.shadowBlur = 0;
+        }
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(frame);
+      }
+      window.addEventListener('resize', resize);
+      resize(); pts = Array.from({ length: N }, mkPt); frame();
+    })();
+
+    /* ════════════════════ Typewriter ════════════════════ */
+    const TW_ES = [
+      'ingeniero_computacional.init()',
+      'ciberseguridad.explore()',
+      'dev_freelance --build',
+      'hub.enmanuel.tech --online',
+    ];
+    const TW_EN = [
+      'computer_engineer.init()',
+      'cybersecurity.explore()',
+      'freelance_dev --build',
+      'hub.enmanuel.tech --online',
+    ];
+    let TW_LINES = TW_ES;
+
+    (function () {
+      const el = document.getElementById('typewriter');
+      let li = 0, ci = 0, del = false;
+      const CUR = '<span style="color:#00ff87;animation:blink 1.1s step-end infinite">|</span>';
+      function tick() {
+        const line = TW_LINES[li % TW_LINES.length];
+        if (!del) { ci++; el.innerHTML = line.slice(0, ci) + CUR; if (ci === line.length) { del = true; setTimeout(tick, 1900); return; } }
+        else { ci--; el.innerHTML = line.slice(0, ci) + CUR; if (ci === 0) { del = false; li++; setTimeout(tick, 380); return; } }
+        setTimeout(tick, del ? 38 : 72);
+      }
+      setTimeout(tick, 700);
+    })();
 
   </script>
 </body>
+
 </html>
